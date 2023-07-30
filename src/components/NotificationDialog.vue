@@ -129,7 +129,9 @@ export default {
                 "ntfy": "Ntfy",
                 "octopush": "Octopush",
                 "OneBot": "OneBot",
+                "Opsgenie": "Opsgenie",
                 "PagerDuty": "PagerDuty",
+                "PagerTree": "PagerTree",
                 "pushbullet": "Pushbullet",
                 "PushByTechulus": "Push by Techulus",
                 "pushover": "Pushover",
@@ -143,6 +145,7 @@ export default {
                 "stackfield": "Stackfield",
                 "teams": "Microsoft Teams",
                 "telegram": "Telegram",
+                "twilio": "Twilio",
                 "Splunk": "Splunk",
                 "webhook": "Webhook",
                 "GoAlert": "GoAlert",
@@ -161,6 +164,7 @@ export default {
                 "SMSManager": "SmsManager (smsmanager.cz)",
                 "WeCom": "WeCom (企业微信群机器人)",
                 "ServerChan": "ServerChan (Server酱)",
+                "smsc": "SMSC",
             };
 
             // Sort by notification name

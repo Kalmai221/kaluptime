@@ -23,7 +23,7 @@ It is a temporary live demo, all data will be deleted after 10 minutes. Use the 
 
 ## ⭐ Features
 
-* Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / Ping / DNS Record / Push / Steam Game Server / Docker Containers
+* Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / HTTP(s) Json Query / Ping / DNS Record / Push / Steam Game Server / Docker Containers
 * Fancy, Reactive, Fast UI/UX
 * Notifications via Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP), and [90+ notification services, click here for the full list](https://github.com/louislam/uptime-kuma/tree/master/src/components/notifications)
 * 20 second intervals
@@ -49,10 +49,14 @@ Uptime Kuma is now running on http://localhost:3001
 
 ### 💪🏻 Non-Docker
 
-Required Tools: 
-- [Node.js](https://nodejs.org/en/download/) >= 14
+Requirements:
+- Platform
+  - ✅ Major Linux distros such as Debian, Ubuntu, CentOS, Fedora and ArchLinux etc.
+  - ✅ Windows 10 (x64), Windows Server 2012 R2 (x64) or higher
+  - ❌ Replit / Heroku
+- [Node.js](https://nodejs.org/en/download/) 14 / 16 / 18 / 20.4
 - [npm](https://docs.npmjs.com/cli/) >= 7
-- [Git](https://git-scm.com/downloads) 
+- [Git](https://git-scm.com/downloads)
 - [pm2](https://pm2.keymetrics.io/) - For running Uptime Kuma in the background
 
 ```bash
@@ -67,7 +71,7 @@ npm run setup
 node server/server.js
 
 # (Recommended) Option 2. Run in background using PM2
-# Install PM2 if you don't have it: 
+# Install PM2 if you don't have it:
 npm install pm2 -g && pm2 install pm2-logrotate
 
 # Start Server
@@ -86,6 +90,10 @@ pm2 monit
 # If you want to add it to startup
 pm2 save && pm2 startup
 ```
+
+### Windows Portable (x64)
+
+https://github.com/louislam/uptime-kuma/files/11886108/uptime-kuma-win64-portable-1.0.1.zip
 
 ### Advanced Installation
 
@@ -144,17 +152,18 @@ Telegram Notification Sample:
 
 If you love this project, please consider giving me a ⭐.
 
-## 🗣️ Discussion
+## 🗣️ Discussion / Ask for Help
 
-### Issues Page
+⚠️ For any general or technical questions, please don't send me an email, as I am unable to provide support in that manner. I will not response if you asked such questions.
 
-You can discuss or ask for help in [issues](https://github.com/louislam/uptime-kuma/issues).
+I recommend using Google, GitHub Issues, or Uptime Kuma's Subreddit for finding answers to your question. If you cannot find the information you need, feel free to ask:
 
-### Subreddit
+- [GitHub Issues](https://github.com/louislam/uptime-kuma/issues)
+- [Subreddit r/Uptime kuma](https://www.reddit.com/r/UptimeKuma/)
 
 My Reddit account: [u/louislamlam](https://reddit.com/u/louislamlam).  
 You can mention me if you ask a question on Reddit.
-[r/Uptime kuma](https://www.reddit.com/r/UptimeKuma/)
+
 
 ## Contribute
 

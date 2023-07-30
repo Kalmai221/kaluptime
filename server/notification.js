@@ -6,6 +6,7 @@ const AliyunSms = require("./notification-providers/aliyun-sms");
 const Apprise = require("./notification-providers/apprise");
 const Bark = require("./notification-providers/bark");
 const ClickSendSMS = require("./notification-providers/clicksendsms");
+const SMSC = require("./notification-providers/smsc");
 const DingDing = require("./notification-providers/dingding");
 const Discord = require("./notification-providers/discord");
 const Feishu = require("./notification-providers/feishu");
@@ -23,7 +24,9 @@ const Mattermost = require("./notification-providers/mattermost");
 const Ntfy = require("./notification-providers/ntfy");
 const Octopush = require("./notification-providers/octopush");
 const OneBot = require("./notification-providers/onebot");
+const Opsgenie = require("./notification-providers/opsgenie");
 const PagerDuty = require("./notification-providers/pagerduty");
+const PagerTree = require("./notification-providers/pagertree");
 const PromoSMS = require("./notification-providers/promosms");
 const Pushbullet = require("./notification-providers/pushbullet");
 const PushDeer = require("./notification-providers/pushdeer");
@@ -40,6 +43,7 @@ const Stackfield = require("./notification-providers/stackfield");
 const Teams = require("./notification-providers/teams");
 const TechulusPush = require("./notification-providers/techulus-push");
 const Telegram = require("./notification-providers/telegram");
+const Twilio = require("./notification-providers/twilio");
 const Splunk = require("./notification-providers/splunk");
 const Webhook = require("./notification-providers/webhook");
 const WeCom = require("./notification-providers/wecom");
@@ -65,6 +69,7 @@ class Notification {
             new Apprise(),
             new Bark(),
             new ClickSendSMS(),
+            new SMSC(),
             new DingDing(),
             new Discord(),
             new Feishu(),
@@ -82,7 +87,9 @@ class Notification {
             new Ntfy(),
             new Octopush(),
             new OneBot(),
+            new Opsgenie(),
             new PagerDuty(),
+            new PagerTree(),
             new PromoSMS(),
             new Pushbullet(),
             new PushDeer(),
@@ -101,6 +108,7 @@ class Notification {
             new Teams(),
             new TechulusPush(),
             new Telegram(),
+            new Twilio(),
             new Splunk(),
             new Webhook(),
             new WeCom(),

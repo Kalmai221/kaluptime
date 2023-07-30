@@ -49,16 +49,15 @@
                                                 {{ monitor.element.name }}
                                             </a>
                                             <p v-else class="item-name"> {{ monitor.element.name }} </p>
+
                                             <span
-                                                v-if="showLink(monitor, true)"
-                                                title="Toggle Clickable Link"
+                                                title="Setting"
                                             >
                                                 <font-awesome-icon
                                                     v-if="editMode"
-                                                    :class="{'link-active': monitor.element.sendUrl, 'btn-link': true}"
-                                                    icon="link" class="action me-3"
-
-                                                    @click="toggleLink(group.index, monitor.index)"
+                                                    :class="{'link-active': true, 'btn-link': true}"
+                                                    icon="cog" class="action me-3"
+                                                    @click="$refs.monitorSettingDialog.show(group, monitor)"
                                                 />
                                             </span>
                                         </div>
@@ -77,9 +76,11 @@
             </div>
         </template>
     </Draggable>
+    <MonitorSettingDialog ref="monitorSettingDialog" />
 </template>
 
 <script>
+import MonitorSettingDialog from "./MonitorSettingDialog.vue";
 import Draggable from "vuedraggable";
 import HeartbeatBar from "./HeartbeatBar.vue";
 import Uptime from "./Uptime.vue";
@@ -87,6 +88,7 @@ import Tag from "./Tag.vue";
 
 export default {
     components: {
+        MonitorSettingDialog,
         Draggable,
         HeartbeatBar,
         Uptime,
@@ -136,15 +138,6 @@ export default {
         },
 
         /**
-         * Toggle the value of sendUrl
-         * @param {number} groupIndex Index of group monitor is member of
-         * @param {number} index Index of monitor within group
-         */
-        toggleLink(groupIndex, index) {
-            this.$root.publicGroupList[groupIndex].monitorList[index].sendUrl = !this.$root.publicGroupList[groupIndex].monitorList[index].sendUrl;
-        },
-
-        /**
          * Should a link to the monitor be shown?
          * Attempts to guess if a link should be shown based upon if
          * sendUrl is set and if the URL is default or not.
@@ -157,7 +150,7 @@ export default {
             // We must check if there are any elements in monitorList to
             // prevent undefined errors if it hasn't been loaded yet
             if (this.$parent.editMode && ignoreSendUrl && Object.keys(this.$root.monitorList).length) {
-                return this.$root.monitorList[monitor.element.id].type === "http" || this.$root.monitorList[monitor.element.id].type === "keyword";
+                return this.$root.monitorList[monitor.element.id].type === "http" || this.$root.monitorList[monitor.element.id].type === "keyword" || this.$root.monitorList[monitor.element.id].type === "json-query";
             }
             return monitor.element.sendUrl && monitor.element.url && monitor.element.url !== "https://" && !this.editMode;
         },
